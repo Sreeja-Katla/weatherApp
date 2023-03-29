@@ -1,0 +1,47 @@
+<div class="search">
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Search City" name="city" [(ngModel)]="cityName">
+  </form>
+
+</div>
+
+<div class="container-fluid d-flex aligns-items-center justify-content-center">
+  <div class="card mt-5">
+ <div class="upper-body">
+   <img src="../../assets/hot.jpg" *ngIf="temperature > 15" width="100%">
+   <img src="../../assets/cool.jpg" *ngIf="temperature <= 15"  width="100%">
+
+   <div class="weather-data mt-5 pt-3">
+   <h4 class="location">{{cityName}}</h4>
+   <h3 class="temperature">{{temperature | number : '1.0-0'}} °C</h3>
+  </div>
+ </div>
+ <div class="lower-body">
+    <div class="details">
+      <img src="../../assets/cold therm.jpg" width="50px" height="60px">
+      <p>Min Temp:{{minTemperature  | number : '1.0-0'}} °C</p>
+
+    </div>
+    <div class="details">
+      <img src="../../assets/hot therm.png" width="50px" height="60px">
+      <p>Max Temp:{{maxTemperature  | number : '1.0-0'}} °C</p>
+    </div>
+    <div class="details">
+      <img src="../../assets/humidity.jpg" width="50px" height="60px">
+      <p>Humidity:{{humidity}} %</p>
+    </div>
+    <div class="details">
+      <img src="../../assets/wind.png" width="50px" height="60px">
+      <p>Wind:{{wind}} km/h</p>
+
+    </div>
+
+  <div>
+
+  </div>
+ </div>
+
+  </div>
+
+
+</div>
